@@ -62,7 +62,7 @@
     <ProjectGuid>{F6D8C827-3281-42F8-93A9-784EB124F6AD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>RayTracerImprovements</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

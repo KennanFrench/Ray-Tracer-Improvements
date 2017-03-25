@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ray-Tracer-Improvements", "Ray-Tracer-Improvements\Ray-Tracer-Improvements.vcxproj", "{F6D8C827-3281-42F8-93A9-784EB124F6AD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ray-Tracer-Tests", "Ray-Tracer-Tests\Ray-Tracer-Tests.vcxproj", "{ED9939E3-E577-47CD-B2A8-8F557D781602}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ray-Tracer-Tests", "Ray-Tracer-Tests\Ray-Tracer-Tests.vcxproj", "{8F9A6F74-1956-44E2-977D-CE71E85489AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,34 +53,34 @@ Global
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x64.Build.0 = spheres|x64
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x86.ActiveCfg = spheres|Win32
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x86.Build.0 = spheres|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.blue_sphere|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.blue_sphere|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.blue_sphere|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.blue_sphere|x86.Build.0 = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.bunny-scene|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.bunny-scene|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.bunny-scene|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.bunny-scene|x86.Build.0 = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.cornell_box|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.cornell_box|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.cornell_box|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.cornell_box|x86.Build.0 = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Debug|x64.ActiveCfg = Debug|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Debug|x64.Build.0 = Debug|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Debug|x86.ActiveCfg = Debug|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Debug|x86.Build.0 = Debug|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.happy-scene|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.happy-scene|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.happy-scene|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.happy-scene|x86.Build.0 = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Release|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Release|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Release|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.Release|x86.Build.0 = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.spheres|x64.ActiveCfg = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.spheres|x64.Build.0 = Release|x64
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.spheres|x86.ActiveCfg = Release|Win32
-		{ED9939E3-E577-47CD-B2A8-8F557D781602}.spheres|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.blue_sphere|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.blue_sphere|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.blue_sphere|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.blue_sphere|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.bunny-scene|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.bunny-scene|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.bunny-scene|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.bunny-scene|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.cornell_box|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.cornell_box|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.cornell_box|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.cornell_box|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Debug|x64.ActiveCfg = Debug|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Debug|x64.Build.0 = Debug|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Debug|x86.Build.0 = Debug|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.happy-scene|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.happy-scene|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.happy-scene|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.happy-scene|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Release|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Release|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Release|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.Release|x86.Build.0 = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.spheres|x64.ActiveCfg = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.spheres|x64.Build.0 = Release|x64
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.spheres|x86.ActiveCfg = Release|Win32
+		{8F9A6F74-1956-44E2-977D-CE71E85489AC}.spheres|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

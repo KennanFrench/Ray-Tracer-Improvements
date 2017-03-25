@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ray-Tracer-Improvements", "Ray-Tracer-Improvements\Ray-Tracer-Improvements.vcxproj", "{F6D8C827-3281-42F8-93A9-784EB124F6AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTests", "UnitTests\UnitTests.vcxproj", "{A2F12EA8-02D4-443F-8036-0FCADE85A185}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,34 @@ Global
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x64.Build.0 = spheres|x64
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x86.ActiveCfg = spheres|Win32
 		{F6D8C827-3281-42F8-93A9-784EB124F6AD}.spheres|x86.Build.0 = spheres|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.blue_sphere|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.blue_sphere|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.blue_sphere|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.blue_sphere|x86.Build.0 = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.bunny-scene|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.bunny-scene|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.bunny-scene|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.bunny-scene|x86.Build.0 = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.cornell_box|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.cornell_box|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.cornell_box|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.cornell_box|x86.Build.0 = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Debug|x64.ActiveCfg = Debug|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Debug|x64.Build.0 = Debug|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Debug|x86.Build.0 = Debug|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.happy-scene|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.happy-scene|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.happy-scene|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.happy-scene|x86.Build.0 = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Release|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Release|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Release|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.Release|x86.Build.0 = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.spheres|x64.ActiveCfg = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.spheres|x64.Build.0 = Release|x64
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.spheres|x86.ActiveCfg = Release|Win32
+		{A2F12EA8-02D4-443F-8036-0FCADE85A185}.spheres|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

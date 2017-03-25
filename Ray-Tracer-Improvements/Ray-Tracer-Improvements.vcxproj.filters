@@ -98,21 +98,4 @@
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Object Include="..\blue_sphere.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="..\bunny-scene.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="..\cornell_box.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="..\happy-scene.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="..\spheres.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-  </ItemGroup>
 </Project>

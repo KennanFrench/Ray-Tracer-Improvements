@@ -62,7 +62,7 @@
     <ProjectGuid>{F6D8C827-3281-42F8-93A9-784EB124F6AD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>RayTracerImprovements</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -458,13 +458,6 @@
     <None Include="..\cornell_box.mtl" />
     <None Include="..\happy-scene.mtl" />
     <None Include="..\spheres.mtl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="..\blue_sphere.obj" />
-    <Object Include="..\bunny-scene.obj" />
-    <Object Include="..\cornell_box.obj" />
-    <Object Include="..\happy-scene.obj" />
-    <Object Include="..\spheres.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include "../Ray-Tracer-Improvements/src/GenVector.h"
 #include "../Ray-Tracer-Improvements/src/Triangle.h"
+#include "../Ray-Tracer-Improvements/src/Sphere.h"
 #include "../Ray-Tracer-Improvements/src/Primative.h"
 #include "../Ray-Tracer-Improvements/src/Material.h"
 #include "../Ray-Tracer-Improvements/src/AABB.h"
@@ -73,6 +74,50 @@ namespace RayTracerTests
 			hp = Hitpoint(0, -1, hpNorm);
 			hpNorm = Vector3(0.0f, 0.0f, 0.0f);
 			Assert::IsFalse(aabb1.intersect(missRay2, hp));
+		}
+
+		TEST_METHOD(AABBIntersectTree) {
+			Vector3 lowerCenter = Vector3(2.0f, 2.0f, 2.0f);
+			Sphere lowerSphere = Sphere(lowerCenter, 1.0f, 1, Material(1.0f, 2.0f, 3.0f, 0.0f, 0.0f));
+
+			Vector3 upperCenter = Vector3(9.0f, 9.0f, 9.0f);
+			Sphere upperSphere = Sphere(upperCenter, 1.0f, 2, Material(1.0f, 2.0f, 3.0f, 0.0f, 0.0f));
+
+			vector<Primative*> primList = vector<Primative*>();
+			primList.push_back(&lowerSphere);
+			primList.push_back(&upperSphere);
+			AABB aabb1 = AABB(primList);
+
+			Vector3 hpNorm = Vector3(0.0f, 0.0f, 0.0f);
+			Hitpoint hp = Hitpoint(0, -1, hpNorm);
+			Vector3 origin = Vector3(0.0f, 0.0f, 0.0f);
+
+			Vector3 missMiddleOrigin = Vector3(5.0f, 5.0f, 0.0f);
+			Vector3 hitLeafMissPrimOrigin = Vector3(1.01f, 1.01f, 0.0f);
+
+			Vector3 missRootDir = Vector3(1.0f, 1.0f, 0.0f);
+			Vector3 missMiddleDir = Vector3(0.0f, 0.0f, 1.0f);
+			Vector3 hitPrimDir = Vector3(3.0f, 3.0f, 3.0f);
+			Vector3 hitLeafMissPrimDir = Vector3(0.0f, 0.0f, 1.0f);
+
+			Ray missRoot = Ray(origin, missRootDir);
+			Ray missMiddle = Ray(missMiddleOrigin, missMiddleDir);
+			Ray hitPrim = Ray(origin, hitPrimDir);
+			Ray hitLeafMissPrim = Ray(hitLeafMissPrimOrigin, hitLeafMissPrimDir);
+
+			Assert::IsFalse(aabb1.intersectWithTree(missRoot, hp));
+			hp = Hitpoint(0, -1, hpNorm);
+			hpNorm = Vector3(0.0f, 0.0f, 0.0f);
+
+			Assert::IsFalse(aabb1.intersectWithTree(missMiddle, hp));
+			hp = Hitpoint(0, -1, hpNorm);
+			hpNorm = Vector3(0.0f, 0.0f, 0.0f);
+
+			Assert::IsTrue(aabb1.intersectWithTree(hitPrim, hp));
+			hp = Hitpoint(0, -1, hpNorm);
+			hpNorm = Vector3(0.0f, 0.0f, 0.0f);
+
+			Assert::IsFalse(aabb1.intersectWithTree(hitLeafMissPrim, hp));
 		}
 
 	};

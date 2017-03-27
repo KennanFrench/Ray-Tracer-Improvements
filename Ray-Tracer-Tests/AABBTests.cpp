@@ -10,11 +10,11 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace RayTracerTests
-{		
+{
 	TEST_CLASS(AABBTest)
 	{
 	public:
-		
+
 		TEST_METHOD(ConstructorGetMinGetMax)
 		{
 			Vector3 v1 = Vector3(1.0f, 2.0f, 3.0f);

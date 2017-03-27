@@ -20,6 +20,10 @@ public:
 	// Constructs entire tree
 	AABB(vector<Primative*> primatives) {
 
+		if (primatives.empty()) {
+			throw std::logic_error("");
+		}
+
 		// Clamp all dimensions of the AABB to the min/max of the dimensions of the primatives
 		this->id = -1;
 		this->min = primatives[0]->getMin();

@@ -1,6 +1,9 @@
 #ifndef RAYGENERATOR_H
 #define RAYGENERATOR_H
 
+#include "Ray.h"
+#include "Camera.h"
+
 class RayGenerator {
 
 public:

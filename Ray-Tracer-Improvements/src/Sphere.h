@@ -1,8 +1,14 @@
 #ifndef SPHERE_H
 #define SPHERE_H
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #include "Primative.h"
+#include "GenVector.h"
 #include "Material.h"
+#include "Ray.h"
+#include "Hitpoint.h"
 
 class Sphere : public Primative {
 

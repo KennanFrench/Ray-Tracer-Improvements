@@ -157,6 +157,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="AABBTests.cpp" />
+    <ClCompile Include="TriangleTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ray-Tracer-Improvements\Ray-Tracer-Improvements.vcxproj">

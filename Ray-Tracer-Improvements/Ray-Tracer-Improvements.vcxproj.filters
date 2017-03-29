@@ -63,13 +63,16 @@
     <ClInclude Include="src\Sphere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RayTracer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Runner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -77,7 +80,7 @@
     <ClCompile Include="src\RayTracer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\stdafx.cpp">
+    <ClCompile Include="src\Runner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

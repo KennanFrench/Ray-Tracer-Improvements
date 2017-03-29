@@ -12,23 +12,27 @@
 
 using namespace std;
 
-//This might be helpful to convert from obj vectors to GenVectors
-Vector3 objToGenVec(obj_vector const * objVec)
-{
-	Vector3 v;
-	v[0] = objVec->e[0];
-	v[1] = objVec->e[1];
-	v[2] = objVec->e[2];
-	return v;
+namespace {
+	//This might be helpful to convert from obj vectors to GenVectors
+	Vector3 objToGenVec(obj_vector const * objVec)
+	{
+		Vector3 v;
+		v[0] = objVec->e[0];
+		v[1] = objVec->e[1];
+		v[2] = objVec->e[2];
+		return v;
+	}
+
+	Vector3 doubleArrToGenVec(double * arr) {
+		Vector3 v;
+		v[0] = arr[0];
+		v[1] = arr[1];
+		v[2] = arr[2];
+		return v;
+	}
 }
 
-Vector3 doubleArrToGenVec(double * arr) {
-	Vector3 v;
-	v[0] = arr[0];
-	v[1] = arr[1];
-	v[2] = arr[2];
-	return v;
-}
+
 
 class Scene {
 	

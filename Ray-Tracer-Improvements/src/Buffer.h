@@ -1,6 +1,9 @@
 #ifndef __BUFFER
 #define __BUFFER
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 template<class T = int>
 class Buffer
 {

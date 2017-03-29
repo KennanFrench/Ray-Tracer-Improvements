@@ -443,17 +443,18 @@
     <ClInclude Include="src\Primative.h" />
     <ClInclude Include="src\Ray.h" />
     <ClInclude Include="src\RayGenerator.h" />
+    <ClInclude Include="src\RayTracer.h" />
+    <ClInclude Include="src\Runner.h" />
     <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\simplePNG.h" />
     <ClInclude Include="src\Sphere.h" />
-    <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\targetver.h" />
     <ClInclude Include="src\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RayTracer.cpp" />
-    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\Runner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\blue_sphere.mtl" />

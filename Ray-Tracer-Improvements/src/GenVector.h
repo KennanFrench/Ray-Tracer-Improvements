@@ -2,8 +2,6 @@
 #define __GenVector
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 
 //enable the padding conversion function - slow
 //#define VECTOR_PADDING_CONVERSION

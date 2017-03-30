@@ -280,7 +280,6 @@ public:
 		for(int i=0; i<dimension; i++)
 			f += c[i]*a(i);
 		return f;
-		//return a.c[0]*c[0] + a.c[1]*c[1] + a.c[2]*c[2];
 	}
 	
 	GenVector cross(const GenVector &a) const

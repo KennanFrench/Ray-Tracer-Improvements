@@ -19,11 +19,11 @@ namespace RayTracerTests
 			Camera c = Camera(origin, Vector3(0.0f, 0.0f, 1.0f), Vector3(0.0f, 1.0f, 0.0f));
 
 			RayGenerator rg = RayGenerator(c, 101, 101);
-			Ray r1 = rg.getRay(0, 0);
-			Ray r2 = rg.getRay(0, 99);
-			Ray r3 = rg.getRay(99, 0);
-			Ray r4 = rg.getRay(99, 99);
-			Ray r5 = rg.getRay(50, 50);
+			Ray r1 = rg.getRayFromPixelLocation(0, 0);
+			Ray r2 = rg.getRayFromPixelLocation(0, 99);
+			Ray r3 = rg.getRayFromPixelLocation(99, 0);
+			Ray r4 = rg.getRayFromPixelLocation(99, 99);
+			Ray r5 = rg.getRayFromPixelLocation(50, 50);
 		}
 	};
 }

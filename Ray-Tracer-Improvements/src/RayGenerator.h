@@ -20,20 +20,20 @@ public:
 		this->resy = resy;
 	}
 
-	Ray getRay(int i, int j) {
-		float l = -((float) resx) / 2;
-		float r = ((float) resx) / 2;
-		float b = -((float) resy) / 2;
-		float t = ((float) resy) / 2;
+	Ray getRayFromPixelLocation(int x, int y) {
+		float midToLeft = -((float) resx) / 2;
+		float midToRight = ((float) resx) / 2;
+		float midToBottom = -((float) resy) / 2;
+		float midToTop = ((float) resy) / 2;
 
-		float u = l + (r - l) * (i + 0.5) / resx;
-		float v = b + (t - b) * (j + 0.5) / resy;
+		float u = midToLeft + (midToRight - midToLeft) * (x + 0.5) / resx;
+		float v = midToBottom + (midToTop - midToBottom) * (y + 0.5) / resy;
 
-		float d = (1 / tan(camera.getFOV() / 2)) * (resx / 2);
+		float distance = (1 / tan(camera.getFOV() / 2)) * (resx / 2);
 		
-		Vector3 s = camera.getPos() + u * camera.getU() + v * camera.getV() - d * camera.getW();
+		Vector3 pixelLocation = camera.getPos() + u * camera.getU() + v * camera.getV() - distance * camera.getW();
 
-		Vector3 rayDir = (s - camera.getPos()).normalize();
+		Vector3 rayDir = (pixelLocation - camera.getPos()).normalize();
 
 		return Ray(camera.getPos(), rayDir);
 	}

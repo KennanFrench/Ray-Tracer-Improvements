@@ -18,15 +18,15 @@ public:
 	}
 
 	Vector3 getAmbInt() {
-		return this->mat.getKA();
+		return this->mat.getAmbientFactor();
 	}
 
 	Vector3 getDifInt() {
-		return this->mat.getKD();
+		return this->mat.getDiffuseFactor();
 	}
 
 	Vector3 getSpecInt() {
-		return this->mat.getKS();
+		return this->mat.getSpecularFactor();
 	}
 
 	Vector3 getPos() {

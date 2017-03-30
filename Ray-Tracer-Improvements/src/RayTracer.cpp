@@ -28,7 +28,7 @@ Buffer<Vector3> RayTracer::getAllShadeValues() {
 }
 
 void RayTracer::getShadeValue(int x, int y, Buffer<Vector3> &buffer) {
-	Ray r = generator.getRay(x, y);
+	Ray r = generator.getRayFromPixelLocation(x, y);
 	Hitpoint hp = scene.intersectWithScene(r);
 	buffer.at(x, RES - y - 1) = shader.shade(r, hp, 1.0);
 }

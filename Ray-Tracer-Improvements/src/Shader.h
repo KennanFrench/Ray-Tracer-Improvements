@@ -25,7 +25,7 @@ public:
 		for (int i = 0; i < s.getLights().size(); i++) {
 
 			// Ambient light
-			amb += (s.getPrimatives()[hp.getObj()]->getMat().getKA() * s.getLights()[i]->getAmbInt());
+			amb += (s.getPrimatives()[hp.getObj()]->getMat().getAmbientFactor() * s.getLights()[i]->getAmbInt());
 
 			Vector3 LightToObjVec = (r.getPointAtTime(hp.getT()) - s.getLights()[i]->getPos());
 			Vector3 sVec = -LightToObjVec;
@@ -36,7 +36,7 @@ public:
 
 				// Diffuse light
 				 
-				Vector3 rd = s.getPrimatives()[hp.getObj()]->getMat().getKD();
+				Vector3 rd = s.getPrimatives()[hp.getObj()]->getMat().getDiffuseFactor();
 				Vector3 id = s.getLights()[i]->getDifInt()[i];
 				
 				Vector3 uS = (-LightToObjVec).normalize();
@@ -48,9 +48,9 @@ public:
 
 				// Specular Light
 
-				float ns = s.getPrimatives()[hp.getObj()]->getMat().getNS();
+				float ns = s.getPrimatives()[hp.getObj()]->getMat().getShininess();
 
-				Vector3 rs = s.getPrimatives()[hp.getObj()]->getMat().getKS();
+				Vector3 rs = s.getPrimatives()[hp.getObj()]->getMat().getSpecularFactor();
 				Vector3 is = s.getLights()[i]->getSpecInt();
 
 				spec += (rs * is * pow(__max(uR.dot(uV), 0.0), ns));
@@ -64,7 +64,7 @@ public:
 			return surfaceComp;
 		}
 
-		float refl = s.getPrimatives()[hp.getObj()]->getMat().getRefl();
+		float refl = s.getPrimatives()[hp.getObj()]->getMat().getReflectionFactor();
 		Vector3 newVec = r.getDirection() - 2 * (r.getDirection().dot(hp.getNorm().normalize())) * hp.getNorm().normalize();
 		Ray newRay = Ray(r.getPointAtTime(hp.getT()) + newVec/newVec.length() * 0.01, newVec.normalize());
 		Hitpoint newHP = s.intersectWithScene(newRay);

@@ -9,41 +9,41 @@ public:
 
 	}
 
-	Material(Vector3 kd, Vector3 ka, Vector3 ks, float ns, float refl) {
-		this->kd = kd;
-		this->ka = ka;
-		this->ks = ks;
-		this->ns = ns;
-		this->refl = refl;
+	Material(Vector3 diffuseFactor, Vector3 ambientFactor, Vector3 specularFactor, float shininess, float reflectionFactor) {
+		this->diffuseFactor = diffuseFactor;
+		this->ambientFactor = ambientFactor;
+		this->specularFactor = specularFactor;
+		this->shininess = shininess;
+		this->reflectionFactor = reflectionFactor;
 	}
 
-	Vector3 getKD() {
-		return this->kd;
+	Vector3 getDiffuseFactor() {
+		return this->diffuseFactor;
 	}
 
-	Vector3 getKA() {
-		return this->ka;
+	Vector3 getAmbientFactor() {
+		return this->ambientFactor;
 	}
 
-	Vector3 getKS() {
-		return this->ks;
+	Vector3 getSpecularFactor() {
+		return this->specularFactor;
 	}
 
-	float getNS() {
-		return this->ns;
+	float getShininess() {
+		return this->shininess;
 	}
 
-	float getRefl() {
-		return this->refl;
+	float getReflectionFactor() {
+		return this->reflectionFactor;
 	}
 
 private:
 
-	Vector3 kd;
-	Vector3 ka;
-	Vector3 ks;
-	float ns;
-	float refl;
+	Vector3 diffuseFactor;
+	Vector3 ambientFactor;
+	Vector3 specularFactor;
+	float shininess;
+	float reflectionFactor;
 };
 
 #endif

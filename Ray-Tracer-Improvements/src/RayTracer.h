@@ -21,11 +21,13 @@ private:
 	Shader shader;
 	RayGenerator generator;
 	double highestColorValue;
+	int resx;
+	int resy;
 
 public:
 
 	RayTracer();
-	RayTracer(char* fileIn);
+	RayTracer(char* fileIn, int resx, int resy, float fieldOfView);
 	Buffer<Vector3> getAllShadeValues();
 	void getShadeValue(int x, int y, Buffer<Vector3> &buffer);
 	void updateHighestValue(int x, int y, Buffer<Vector3> buffer);

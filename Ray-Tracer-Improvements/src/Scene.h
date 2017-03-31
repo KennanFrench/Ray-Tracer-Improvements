@@ -42,7 +42,7 @@ public:
 
 	}
 
-	Scene(objLoader &obj) {
+	Scene(objLoader &obj, float fieldOfView) {
 
 		printf("Starting scene build...\n");
 
@@ -62,7 +62,7 @@ public:
 		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
 		at = (at - pos).normalize();
 		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
-		this->camera = Camera(pos, at, up);
+		this->camera = Camera(pos, at, up, fieldOfView);
 
 		// spheres
 		for (int i = 0; i < obj.sphereCount; i++) {

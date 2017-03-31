@@ -75,6 +75,12 @@
     <ClInclude Include="src\Runner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Params.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resolution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RayTracer.cpp">

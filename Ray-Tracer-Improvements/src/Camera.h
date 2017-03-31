@@ -4,6 +4,10 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
+#ifndef DEFAULT_FIELD_OF_VIEW
+#define DEFAULT_FIELD_OF_VIEW M_PI / 2
+#endif
+
 class Camera {
 
 public:
@@ -13,15 +17,15 @@ public:
 		this->v = NULL;
 		this->w = NULL;
 		this->pos = NULL;
-		this->FOV = M_PI / 2;
+		this->FOV = DEFAULT_FIELD_OF_VIEW;
 	}
 
-	Camera(Vector3 pos, Vector3 at, Vector3 up) {
+	Camera(Vector3 pos, Vector3 at, Vector3 up, float fieldOfView) {
 		this->pos = pos;
 		this->w = Vector3(0.0, 0.0, 0.0) - at;
 		this->u = up.cross(w);
 		this->v = w.cross(u);
-		this->FOV = M_PI / 2;
+		this->FOV = fieldOfView;
 	}
 
 	Vector3 getPos() {

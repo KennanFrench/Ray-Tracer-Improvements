@@ -1,4 +1,5 @@
 #include <stdlib.h>
 #include "RayTracer.h"
+#include "Params.h"
 
-void checkParams(int argc, char ** argv);
+Params loadFromParams(int argc, char ** argv);

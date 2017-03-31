@@ -440,10 +440,12 @@
     <ClInclude Include="src\Material.h" />
     <ClInclude Include="src\objLoader.hpp" />
     <ClInclude Include="src\obj_parser.h" />
+    <ClInclude Include="src\Params.h" />
     <ClInclude Include="src\Primative.h" />
     <ClInclude Include="src\Ray.h" />
     <ClInclude Include="src\RayGenerator.h" />
     <ClInclude Include="src\RayTracer.h" />
+    <ClInclude Include="src\Resolution.h" />
     <ClInclude Include="src\Runner.h" />
     <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Shader.h" />

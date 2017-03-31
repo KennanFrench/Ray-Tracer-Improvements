@@ -101,7 +101,7 @@ public:
 		printf("AABB tree constructed!\n");
 	}
 
-	Material createMaterial(objLoader obj, int material_index) {
+	Material createMaterial(objLoader &obj, int material_index) {
 		return Material(
 			doubleArrToGenVec(obj.materialList[material_index]->diff),
 			doubleArrToGenVec(obj.materialList[material_index]->amb),

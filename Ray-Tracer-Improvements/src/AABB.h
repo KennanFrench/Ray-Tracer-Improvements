@@ -24,20 +24,7 @@ public:
 			throw std::logic_error("");
 		}
 
-		// Clamp all dimensions of the AABB to the min/max of the dimensions of the primatives
-		this->id = -1;
-		this->min = primatives[0]->getMin();
-		this->max = primatives[0]->getMax();
-		for (int i = 1; i < primatives.size(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (primatives[i]->getMin()[j] < this->min[j]) {
-					this->min[j] = primatives[i]->getMin()[j];
-				}
-				if (primatives[i]->getMax()[j] > this->max[j]) {
-					this->max[j] = primatives[i]->getMax()[j];
-				}
-			}
-		}
+		clampDimensions(primatives);
 
 		// If vector size == 1, keep a reference to the primative, make the two AABBs = NULL, and return
 		if (primatives.size() == 1) {
@@ -87,6 +74,23 @@ public:
 		this->b = new AABB(b);
 		this->prim = NULL;
 
+	}
+
+	// Clamp all dimensions of the AABB to the min/max of the dimensions of the primatives
+	void clampDimensions(vector<Primative*> primatives) {
+		this->id = -1;
+		this->min = primatives[0]->getMin();
+		this->max = primatives[0]->getMax();
+		for (int i = 1; i < primatives.size(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (primatives[i]->getMin()[j] < this->min[j]) {
+					this->min[j] = primatives[i]->getMin()[j];
+				}
+				if (primatives[i]->getMax()[j] > this->max[j]) {
+					this->max[j] = primatives[i]->getMax()[j];
+				}
+			}
+		}
 	}
 
 	// Intsersects with the AABB, not anything inside

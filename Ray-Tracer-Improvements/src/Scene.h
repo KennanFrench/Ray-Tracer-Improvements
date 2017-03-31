@@ -70,12 +70,7 @@ public:
 				objToGenVec(obj.vertexList[obj.sphereList[i]->pos_index]),
 				objToGenVec(obj.normalList[obj.sphereList[i]->up_normal_index]).length(),
 				this->primatives.size(),
-				Material(
-					doubleArrToGenVec(obj.materialList[obj.sphereList[i]->material_index]->diff),
-					doubleArrToGenVec(obj.materialList[obj.sphereList[i]->material_index]->amb),
-					doubleArrToGenVec(obj.materialList[obj.sphereList[i]->material_index]->spec),
-					obj.materialList[obj.sphereList[i]->material_index]->shiny,
-					obj.materialList[obj.sphereList[i]->material_index]->reflect)));
+				createMaterial(obj, obj.sphereList[i]->material_index)));
 		}
 
 		// triangles
@@ -85,12 +80,7 @@ public:
 				objToGenVec(obj.vertexList[obj.faceList[i]->vertex_index[1]]),
 				objToGenVec(obj.vertexList[obj.faceList[i]->vertex_index[2]]),
 				this->primatives.size(),
-				Material(
-					doubleArrToGenVec(obj.materialList[obj.faceList[i]->material_index]->diff),
-					doubleArrToGenVec(obj.materialList[obj.faceList[i]->material_index]->amb),
-					doubleArrToGenVec(obj.materialList[obj.faceList[i]->material_index]->spec),
-					obj.materialList[obj.faceList[i]->material_index]->shiny,
-					obj.materialList[obj.faceList[i]->material_index]->reflect)));
+				createMaterial(obj, obj.faceList[i]->material_index)));
 		}
 
 		// lights
@@ -109,6 +99,15 @@ public:
 		printf("Constructing AABB tree...\n");
 		this->tree = new AABB(this->getPrimatives());
 		printf("AABB tree constructed!\n");
+	}
+
+	Material createMaterial(objLoader obj, int material_index) {
+		return Material(
+			doubleArrToGenVec(obj.materialList[material_index]->diff),
+			doubleArrToGenVec(obj.materialList[material_index]->amb),
+			doubleArrToGenVec(obj.materialList[material_index]->spec),
+			obj.materialList[material_index]->shiny,
+			obj.materialList[material_index]->reflect);
 	}
 
 	Hitpoint intersectWithScene(Ray r) {

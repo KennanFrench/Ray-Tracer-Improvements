@@ -35,7 +35,7 @@ public:
 
 		float t = ((a - e).dot(n) / d.dot(n));
 		Vector3 x = ray.getPointAtTime(t);
-		if ((b - a).cross(x - a).dot(n) > 0 && (c - b).cross(x - b).dot(n) > 0 && (a - c).cross(x - c).dot(n) > 0) {
+		if (withinBounds(x, n)) {
 			hp = Hitpoint(t, this->id, n.normalize());
 			return true;
 		}
@@ -73,6 +73,10 @@ private:
 	int id;
 
 	Material mat;
+
+	bool withinBounds(Vector3 pointOnPlane, Vector3 n) {
+		return (b - a).cross(pointOnPlane - a).dot(n) > 0 && (c - b).cross(pointOnPlane - b).dot(n) > 0 && (a - c).cross(pointOnPlane - c).dot(n) > 0;
+	}
 
 };
 #endif

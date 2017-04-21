@@ -31,11 +31,15 @@ public:
 
 		float distance = (1 / tan(camera.getFOV() / 2)) * (resx / 2);
 		
-		Vector3 pixelLocation = camera.getPos() + u * camera.getU() + v * camera.getV() - distance * camera.getW();
+		Vector3 pixelLocation = getPixelLocationInWorldCoordinates(u, v, distance);
 
 		Vector3 rayDir = (pixelLocation - camera.getPos()).normalize();
 
 		return Ray(camera.getPos(), rayDir);
+	}
+
+	Vector3 getPixelLocationInWorldCoordinates(float u, float v, float distanceToCamera) {
+		return camera.getPos() + u * camera.getU() + v * camera.getV() - distance * camera.getW();
 	}
 
 private:

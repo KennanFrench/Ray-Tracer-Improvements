@@ -32,7 +32,7 @@ public:
 			float LightToObjDist = LightToObjVec.length();
 			Ray LightToObj = Ray(s.getLights()[i]->getPos(), LightToObjVec.normalize());
 			Hitpoint lightHP = s.intersectWithScene(LightToObj);
-			if (LightToObjDist - lightHP.getT() < 0.1) { // if there's an unobstructed path from the light to the object				
+			if (LightToObjDist - lightHP.getT() < rTEpsilon) { // if there's an unobstructed path from the light to the object				
 				
 				Vector3 uS = (-LightToObjVec).normalize();
 				Vector3 uN = lightHP.getNorm().normalize();
@@ -47,13 +47,13 @@ public:
 		}
 
 		Vector3 surfaceComp = amb + diff + spec;
-		if (energy < 0.001) { // No more reflections
+		if (energy < rTEpsilon) { // No more reflections
 			return surfaceComp;
 		}
 
 		float refl = s.getPrimatives()[hp.getObj()]->getMat().getReflectionFactor();
 		Vector3 newVec = r.getDirection() - 2 * (r.getDirection().dot(hp.getNorm().normalize())) * hp.getNorm().normalize();
-		Ray newRay = Ray(r.getPointAtTime(hp.getT()) + newVec/newVec.length() * 0.01, newVec.normalize());
+		Ray newRay = Ray(r.getPointAtTime(hp.getT()) + newVec/newVec.length() * rTEpsilon, newVec.normalize());
 		Hitpoint newHP = s.intersectWithScene(newRay);
 		Vector3 refComp = this->shade(newRay, newHP, energy * refl);
 
@@ -64,6 +64,7 @@ public:
 private:
 
 	Scene s;
+	double rTEpsilon = 0.001;
 
 	Vector3 calculateSpecular(Material mat, Light light, Vector3 uV, Vector3 uR) {
 		float ns = mat.getShininess();

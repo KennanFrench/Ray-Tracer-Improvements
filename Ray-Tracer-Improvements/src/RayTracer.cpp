@@ -47,12 +47,28 @@ Buffer<Color> RayTracer::convertVec3sToRGBColors(Buffer<Vector3> buffer) {
 	Buffer<Color> cbuffer = Buffer<Color>(this->resx, this->resy);
 	for (int y = 0; y < this->resy; y++) {
 		for (int x = 0; x < this->resx; x++) {
-			cbuffer.at(x, this->resy - y - 1) = Color(
-				buffer.at(x, this->resy - y - 1)[0] / highestColorValue * 255,
-				buffer.at(x, this->resy - y - 1)[1] / highestColorValue * 255,
-				buffer.at(x, this->resy - y - 1)[2] / highestColorValue * 255);
+			cbuffer.at(x, this->resy - y - 1) = scaleByHighestColorValue(x, y, buffer);
 		}
 	}
 	return cbuffer;
 }
+
+Color RayTracer::scaleByHighestColorValue(int x, int y, Buffer<Vector3> buffer) {
+	return Color(
+		buffer.at(x, this->resy - y - 1)[0] / highestColorValue * 255,
+		buffer.at(x, this->resy - y - 1)[1] / highestColorValue * 255,
+		buffer.at(x, this->resy - y - 1)[2] / highestColorValue * 255
+		);
+}
+
+void RayTracer::setHighestValue(double val)
+{
+	this->highestColorValue = val;
+}
+
+void RayTracer::setResolution(int x, int y) {
+	this->resx = x;
+	this->resy = y;
+}
+
 #endif

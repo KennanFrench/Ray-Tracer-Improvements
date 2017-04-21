@@ -32,6 +32,9 @@ public:
 	void getShadeValue(int x, int y, Buffer<Vector3> &buffer);
 	void updateHighestValue(int x, int y, Buffer<Vector3> buffer);
 	Buffer<Color> convertVec3sToRGBColors(Buffer<Vector3> buffer);
+	Color scaleByHighestColorValue(int x, int y, Buffer<Vector3> buffer);
+	void setHighestValue(double val);
+	void setResolution(int x, int y);
 
 };
 

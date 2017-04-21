@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RayGeneratorTests.cpp" />
+    <ClCompile Include="RayTracerTests.cpp" />
     <ClCompile Include="SceneTests.cpp" />
     <ClCompile Include="ShaderTests.cpp" />
     <ClCompile Include="SphereTests.cpp" />

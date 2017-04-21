@@ -48,12 +48,7 @@ public:
 
 				// Specular Light
 
-				float ns = s.getPrimatives()[hp.getObj()]->getMat().getShininess();
-
-				Vector3 rs = s.getPrimatives()[hp.getObj()]->getMat().getSpecularFactor();
-				Vector3 is = s.getLights()[i]->getSpecInt();
-
-				spec += (rs * is * pow(__max(uR.dot(uV), 0.0), ns));
+				spec += calculateSpecular(s.getPrimatives()[hp.getObj()]->getMat(), *s.getLights()[i], uV, uR);
 
 			}
 
@@ -72,6 +67,14 @@ public:
 
 		return (1 - refl) * surfaceComp + refl * refComp;
 
+	}
+
+	Vector3 calculateSpecular(Material mat, Light light, Vector3 uV, Vector3 uR) {
+		float ns = mat.getShininess();
+		Vector3 rs = mat.getSpecularFactor();
+		Vector3 is = light.getSpecInt();
+
+		return (rs * is * pow(__max(uR.dot(uV), 0.0), ns));
 	}
 
 private:

@@ -31,5 +31,15 @@ namespace RayTracerTests
 			hpNorm = Vector3(0.0f, 0.0f, 0.0f);
 			Assert::IsFalse(t.intersect(rayMiss, hp));
 		}
+
+		TEST_METHOD(WithinBounds) {
+			Vector3 origin = Vector3(0.0f, 0.0f, 0.0f);
+			Vector3 v1 = Vector3(1.0f, 1.0f, 1.0f);
+			Vector3 v2 = Vector3(2.0f, 5.0f, 1.0f);
+			Vector3 v3 = Vector3(3.0f, 1.0f, 1.0f);
+			Triangle t = Triangle(v1, v2, v3, 0, Material(1.0f, 2.0f, 3.0f, 0.0f, 0.0f));
+
+			Assert::IsFalse(t.withinBounds(Vector3(2.0f, 2.0f, 1.0f), v1));
+		}
 	};
 }

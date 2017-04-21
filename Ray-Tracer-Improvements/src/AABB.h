@@ -34,15 +34,7 @@ public:
 			return;
 		}
 
-		// Find largest dimension (0, 1, 2)
-		int maxDim = 0;
-		float max = this->max[0] - this->min[0];
-		for (int i = 1; i < 3; i++) {
-			if (this->max[i] - this->min[i] > max) {
-				maxDim = i;
-				max = this->max[i] - this->min[i];
-			}
-		}
+		int maxDim = getLargestDimension();
 
 		// Divide that dimension in half
 		float midPoint = (this->min[maxDim] + this->max[maxDim]) / 2;
@@ -91,6 +83,19 @@ public:
 				}
 			}
 		}
+	}
+
+	// Gets largest dimension (0, 1, 2) of the AABB
+	int getLargestDimension() {
+		int maxDim = 0;
+		float max = this->max[0] - this->min[0];
+		for (int i = 1; i < 3; i++) {
+			if (this->max[i] - this->min[i] > max) {
+				maxDim = i;
+				max = this->max[i] - this->min[i];
+			}
+		}
+		return maxDim;
 	}
 
 	// Intsersects with the AABB, not anything inside

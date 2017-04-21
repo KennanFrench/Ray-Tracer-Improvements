@@ -39,7 +39,7 @@ public:
 	}
 
 	Vector3 getPixelLocationInWorldCoordinates(float u, float v, float distanceToCamera) {
-		return camera.getPos() + u * camera.getU() + v * camera.getV() - distance * camera.getW();
+		return camera.getPos() + u * camera.getU() + v * camera.getV() - distanceToCamera * camera.getW();
 	}
 
 private:

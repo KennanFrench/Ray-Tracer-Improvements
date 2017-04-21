@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.14393.0
-cornell_box|Win32|C:\Users\wuy5\Source\Repos\Ray-Tracer-Improvements\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v141:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.14393.0
+cornell_box|Win32|C:\Users\kuhnerdm\Source\Repos\Ray-Tracer-Improvements\|

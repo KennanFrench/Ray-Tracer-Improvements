@@ -15,12 +15,13 @@ namespace RayGeneratorTests
 	public:
 
 		TEST_METHOD(testCalculateSpecular) {
+			Shader s = Shader();
 			Vector3 v1 = Vector3(1.0f, 2.0f, 3.0f);
 			Vector3 v2 = Vector3(2.0f, 3.0f, 4.0f);
 			Material mat = Material(v1, v2, v1, 2.0f, 3.0f);
 			Light light = Light(mat, v1);
 			Hitpoint hp = Hitpoint(1.0f, 1, v1);
-			Assert::AreEqual((2744, 0, 0), calculateSpecular(mat, light, v1, hp, v1, v1));
+			Assert::IsTrue(Vector3(2744, 0, 0) == s.calculateSpecular(mat, light, v1, v1));
 		}
 	};
 }

@@ -9,6 +9,8 @@
 #include "Camera.h"
 #include "Light.h"
 #include "AABB.h"
+#include "objLoader.hpp"
+#include "obj_parser.h"
 
 using namespace std;
 

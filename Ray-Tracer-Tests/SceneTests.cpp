@@ -29,5 +29,9 @@ namespace RayTracerTests
 			Assert::AreEqual((int)(scene.getLights().size()), 3);
 			Assert::IsNotNull(&scene.getCamera());
 		}
+
+		TEST_METHOD(initializeCamera) {
+
+		}
 	};
 }

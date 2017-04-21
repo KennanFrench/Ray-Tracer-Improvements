@@ -1,6 +1,8 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#include "Scene.h"
+
 class Shader {
 
 public:

@@ -1,6 +1,8 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
+#include "GenVector.h"
+
 class Material {
 
 public:

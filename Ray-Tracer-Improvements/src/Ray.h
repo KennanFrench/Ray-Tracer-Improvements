@@ -1,6 +1,8 @@
 #ifndef RAY_H
 #define RAY_H
 
+#include "GenVector.h"
+
 class Ray {
 
 public:

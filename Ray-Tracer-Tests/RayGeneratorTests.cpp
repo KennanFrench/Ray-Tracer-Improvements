@@ -39,6 +39,7 @@ namespace RayTracerTests
 			float distanceToCamera = 5.0f;
 
 			RayGenerator rg = RayGenerator(c, 101, 101);
+			Assert::IsTrue(rg.getPixelLocationInWorldCoordinates(u, v, distanceToCamera) == c.getPos() + u * c.getU() + v * c.getV() - distanceToCamera * c.getW());
 		}
 	};
 }

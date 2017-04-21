@@ -62,33 +62,17 @@ public:
 
 		// spheres
 		for (int i = 0; i < obj.sphereCount; i++) {
-			this->primatives.push_back(new Sphere(
-				objToGenVec(obj.vertexList[obj.sphereList[i]->pos_index]),
-				objToGenVec(obj.normalList[obj.sphereList[i]->up_normal_index]).length(),
-				this->primatives.size(),
-				createMaterial(obj, obj.sphereList[i]->material_index)));
+			this->primatives.push_back(createSphere(obj, i));
 		}
 
 		// triangles
 		for (int i = 0; i < obj.faceCount; i++) {
-			this->primatives.push_back(new Triangle(
-				objToGenVec(obj.vertexList[obj.faceList[i]->vertex_index[0]]),
-				objToGenVec(obj.vertexList[obj.faceList[i]->vertex_index[1]]),
-				objToGenVec(obj.vertexList[obj.faceList[i]->vertex_index[2]]),
-				this->primatives.size(),
-				createMaterial(obj, obj.faceList[i]->material_index)));
+			this->primatives.push_back(createTriangle(obj, i));
 		}
 
 		// lights
 		for (int i = 0; i < obj.lightPointCount; i++) {
-			this->lights.push_back(new Light(
-				Material(
-					doubleArrToGenVec(obj.materialList[obj.lightPointList[i]->material_index]->diff),
-					doubleArrToGenVec(obj.materialList[obj.lightPointList[i]->material_index]->amb),
-					doubleArrToGenVec(obj.materialList[obj.lightPointList[i]->material_index]->spec),
-					0.0,
-					0.0),
-				objToGenVec(obj.vertexList[obj.lightPointList[i]->pos_index])));
+			this->lights.push_back(createLight(obj, i));
 		}
 
 		printf("Scene built!\n");
@@ -137,6 +121,33 @@ private:
 		at = (at - pos).normalize();
 		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
 		this->camera = Camera(pos, at, up, fieldOfView);
+	}
+
+	Sphere* createSphere(objLoader &obj, int sphere_index) {
+		return new Sphere(
+			objToGenVec(obj.vertexList[obj.sphereList[sphere_index]->pos_index]),
+			objToGenVec(obj.normalList[obj.sphereList[sphere_index]->up_normal_index]).length(),
+			this->primatives.size(),
+			createMaterial(obj, obj.sphereList[sphere_index]->material_index));
+	}
+
+	Triangle* createTriangle(objLoader &obj, int triangle_index) {
+		return new Triangle(
+			objToGenVec(obj.vertexList[obj.faceList[triangle_index]->vertex_index[0]]),
+			objToGenVec(obj.vertexList[obj.faceList[triangle_index]->vertex_index[1]]),
+			objToGenVec(obj.vertexList[obj.faceList[triangle_index]->vertex_index[2]]),
+			this->primatives.size(),
+			createMaterial(obj, obj.faceList[triangle_index]->material_index));
+	}
+
+	Light* createLight(objLoader &obj, int light_index) {
+		return new Light(Material(
+			doubleArrToGenVec(obj.materialList[obj.lightPointList[light_index]->material_index]->diff),
+			doubleArrToGenVec(obj.materialList[obj.lightPointList[light_index]->material_index]->amb),
+			doubleArrToGenVec(obj.materialList[obj.lightPointList[light_index]->material_index]->spec),
+			0.0,
+			0.0),
+			objToGenVec(obj.vertexList[obj.lightPointList[light_index]->pos_index]));
 	}
 
 };

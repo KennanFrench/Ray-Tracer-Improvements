@@ -38,15 +38,15 @@ public:
 		return Ray(camera.getPos(), rayDir);
 	}
 
-	Vector3 getPixelLocationInWorldCoordinates(float u, float v, float distanceToCamera) {
-		return camera.getPos() + u * camera.getU() + v * camera.getV() - distanceToCamera * camera.getW();
-	}
-
 private:
 
 	Camera camera;
 	int resx;
 	int resy;
+
+	Vector3 getPixelLocationInWorldCoordinates(float u, float v, float distanceToCamera) {
+		return camera.getPos() + u * camera.getU() + v * camera.getV() - distanceToCamera * camera.getW();
+	}
 
 };
 #endif

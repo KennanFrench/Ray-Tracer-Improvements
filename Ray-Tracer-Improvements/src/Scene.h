@@ -97,27 +97,10 @@ public:
 		printf("AABB tree constructed!\n");
 	}
 
-	Material createMaterial(objLoader &obj, int material_index) {
-		return Material(
-			doubleArrToGenVec(obj.materialList[material_index]->diff),
-			doubleArrToGenVec(obj.materialList[material_index]->amb),
-			doubleArrToGenVec(obj.materialList[material_index]->spec),
-			obj.materialList[material_index]->shiny,
-			obj.materialList[material_index]->reflect);
-	}
-
 	Hitpoint intersectWithScene(Ray r) {
 		Hitpoint hp = Hitpoint(-1.0, -1, Vector3(-1, -1, -1));
 		tree->intersectWithTree(r, hp);
 		return hp;
-	}
-
-	void initializeCamera(objLoader &obj, float fieldOfView) {
-		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
-		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
-		at = (at - pos).normalize();
-		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
-		this->camera = Camera(pos, at, up, fieldOfView);
 	}
 
 	Camera getCamera() {
@@ -138,6 +121,23 @@ private:
 	vector<Light*> lights;
 	Camera camera;
 	AABB* tree;
+
+	Material createMaterial(objLoader &obj, int material_index) {
+		return Material(
+			doubleArrToGenVec(obj.materialList[material_index]->diff),
+			doubleArrToGenVec(obj.materialList[material_index]->amb),
+			doubleArrToGenVec(obj.materialList[material_index]->spec),
+			obj.materialList[material_index]->shiny,
+			obj.materialList[material_index]->reflect);
+	}
+
+	void initializeCamera(objLoader &obj, float fieldOfView) {
+		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
+		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
+		at = (at - pos).normalize();
+		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
+		this->camera = Camera(pos, at, up, fieldOfView);
+	}
 
 };
 #endif

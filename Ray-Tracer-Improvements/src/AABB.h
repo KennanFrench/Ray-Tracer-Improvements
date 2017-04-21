@@ -68,36 +68,6 @@ public:
 
 	}
 
-	// Clamp all dimensions of the AABB to the min/max of the dimensions of the primatives
-	void clampDimensions(vector<Primative*> primatives) {
-		this->id = -1;
-		this->min = primatives[0]->getMin();
-		this->max = primatives[0]->getMax();
-		for (int i = 1; i < primatives.size(); i++) {
-			for (int j = 0; j < 3; j++) {
-				if (primatives[i]->getMin()[j] < this->min[j]) {
-					this->min[j] = primatives[i]->getMin()[j];
-				}
-				if (primatives[i]->getMax()[j] > this->max[j]) {
-					this->max[j] = primatives[i]->getMax()[j];
-				}
-			}
-		}
-	}
-
-	// Gets largest dimension (0, 1, 2) of the AABB
-	int getLargestDimension() {
-		int maxDim = 0;
-		float max = this->max[0] - this->min[0];
-		for (int i = 1; i < 3; i++) {
-			if (this->max[i] - this->min[i] > max) {
-				maxDim = i;
-				max = this->max[i] - this->min[i];
-			}
-		}
-		return maxDim;
-	}
-
 	// Intsersects with the AABB, not anything inside
 	virtual bool intersect(Ray &ray, Hitpoint &hp) {
 		const size_t vecDim = 3;
@@ -212,6 +182,36 @@ private:
 	Primative* prim;
 	AABB* a;
 	AABB* b;
+
+	// Clamp all dimensions of the AABB to the min/max of the dimensions of the primatives
+	void clampDimensions(vector<Primative*> primatives) {
+		this->id = -1;
+		this->min = primatives[0]->getMin();
+		this->max = primatives[0]->getMax();
+		for (int i = 1; i < primatives.size(); i++) {
+			for (int j = 0; j < 3; j++) {
+				if (primatives[i]->getMin()[j] < this->min[j]) {
+					this->min[j] = primatives[i]->getMin()[j];
+				}
+				if (primatives[i]->getMax()[j] > this->max[j]) {
+					this->max[j] = primatives[i]->getMax()[j];
+				}
+			}
+		}
+	}
+
+	// Gets largest dimension (0, 1, 2) of the AABB
+	int getLargestDimension() {
+		int maxDim = 0;
+		float max = this->max[0] - this->min[0];
+		for (int i = 1; i < 3; i++) {
+			if (this->max[i] - this->min[i] > max) {
+				maxDim = i;
+				max = this->max[i] - this->min[i];
+			}
+		}
+		return maxDim;
+	}
 };
 
 #endif

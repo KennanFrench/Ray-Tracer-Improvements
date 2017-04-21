@@ -58,11 +58,7 @@ public:
 		}
 
 		// camera
-		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
-		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
-		at = (at - pos).normalize();
-		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
-		this->camera = Camera(pos, at, up, fieldOfView);
+		initializeCamera(obj, fieldOfView);
 
 		// spheres
 		for (int i = 0; i < obj.sphereCount; i++) {
@@ -114,6 +110,14 @@ public:
 		Hitpoint hp = Hitpoint(-1.0, -1, Vector3(-1, -1, -1));
 		tree->intersectWithTree(r, hp);
 		return hp;
+	}
+
+	void initializeCamera(objLoader &obj, float fieldOfView) {
+		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
+		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
+		at = (at - pos).normalize();
+		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
+		this->camera = Camera(pos, at, up, fieldOfView);
 	}
 
 	Camera getCamera() {

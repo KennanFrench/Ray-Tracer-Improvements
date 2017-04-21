@@ -65,6 +65,10 @@ public:
 			__max(__max(this->a[2], this->b[2]), this->c[2]));
 	}
 
+	bool withinBounds(Vector3 pointOnPlane, Vector3 n) {
+		return (b - a).cross(pointOnPlane - a).dot(n) > 0 && (c - b).cross(pointOnPlane - b).dot(n) > 0 && (a - c).cross(pointOnPlane - c).dot(n) > 0;
+	}
+
 private:
 
 	Vector3 a;
@@ -73,10 +77,6 @@ private:
 	int id;
 
 	Material mat;
-
-	bool withinBounds(Vector3 pointOnPlane, Vector3 n) {
-		return (b - a).cross(pointOnPlane - a).dot(n) > 0 && (c - b).cross(pointOnPlane - b).dot(n) > 0 && (a - c).cross(pointOnPlane - c).dot(n) > 0;
-	}
 
 };
 #endif

@@ -28,5 +28,17 @@ namespace RayTracerTests
 			Ray r4 = rg.getRayFromPixelLocation(99, 99);
 			Ray r5 = rg.getRayFromPixelLocation(50, 50);
 		}
+
+		TEST_METHOD(testGetPixelInWorldCoordinates)
+		{
+			Vector3 expected = Vector3();
+			Vector3 origin = Vector3(0.0f, 0.0f, 0.0f);
+			Camera c = Camera(origin, Vector3(0.0f, 0.0f, 1.0f), Vector3(0.0f, 1.0f, 0.0f), M_PI / 2);
+			float u = 1.0f;
+			float v = 1.0f;
+			float distanceToCamera = 5.0f;
+
+			RayGenerator rg = RayGenerator(c, 101, 101);
+		}
 	};
 }

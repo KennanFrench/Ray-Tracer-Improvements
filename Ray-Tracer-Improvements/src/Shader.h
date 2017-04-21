@@ -61,11 +61,6 @@ public:
 
 	}
 
-private:
-
-	Scene s;
-	double rTEpsilon = 0.001;
-
 	Vector3 calculateSpecular(Material mat, Light light, Vector3 uV, Vector3 uR) {
 		float ns = mat.getShininess();
 		Vector3 rs = mat.getSpecularFactor();
@@ -79,6 +74,11 @@ private:
 		Vector3 id = light.getDifInt();
 		return (rd * id * __max(uS.dot(uN), 0.0));
 	}
+
+private:
+
+	Scene s;
+	double rTEpsilon = 0.001;
 
 };
 #endif

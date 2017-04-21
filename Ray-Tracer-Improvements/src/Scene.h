@@ -99,6 +99,14 @@ public:
 		return this->lights;
 	}
 
+	void initializeCamera(objLoader &obj, float fieldOfView) {
+		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
+		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
+		at = (at - pos).normalize();
+		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
+		this->camera = Camera(pos, at, up, fieldOfView);
+	}
+
 private:
 	
 	vector<Primative*> primatives;
@@ -113,14 +121,6 @@ private:
 			doubleArrToGenVec(obj.materialList[material_index]->spec),
 			obj.materialList[material_index]->shiny,
 			obj.materialList[material_index]->reflect);
-	}
-
-	void initializeCamera(objLoader &obj, float fieldOfView) {
-		Vector3 pos = objToGenVec(obj.vertexList[obj.camera->camera_pos_index]);
-		Vector3 at = objToGenVec(obj.vertexList[obj.camera->camera_look_point_index]);
-		at = (at - pos).normalize();
-		Vector3 up = objToGenVec(obj.normalList[obj.camera->camera_up_norm_index]);
-		this->camera = Camera(pos, at, up, fieldOfView);
 	}
 
 	Sphere* createSphere(objLoader &obj, int sphere_index) {

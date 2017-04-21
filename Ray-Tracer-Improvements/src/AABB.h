@@ -174,6 +174,19 @@ public:
 		return this->max;
 	}
 
+	// Gets largest dimension (0, 1, 2) of the AABB
+	int getLargestDimension() {
+		int maxDim = 0;
+		float max = this->max[0] - this->min[0];
+		for (int i = 1; i < 3; i++) {
+			if (this->max[i] - this->min[i] > max) {
+				maxDim = i;
+				max = this->max[i] - this->min[i];
+			}
+		}
+		return maxDim;
+	}
+
 private:
 
 	Vector3 min;
@@ -200,18 +213,6 @@ private:
 		}
 	}
 
-	// Gets largest dimension (0, 1, 2) of the AABB
-	int getLargestDimension() {
-		int maxDim = 0;
-		float max = this->max[0] - this->min[0];
-		for (int i = 1; i < 3; i++) {
-			if (this->max[i] - this->min[i] > max) {
-				maxDim = i;
-				max = this->max[i] - this->min[i];
-			}
-		}
-		return maxDim;
-	}
 };
 
 #endif

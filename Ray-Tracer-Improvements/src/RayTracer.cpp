@@ -33,7 +33,6 @@ void RayTracer::getShadeValue(int x, int y, Buffer<Vector3> &buffer) {
 	Ray r = generator.getRayFromPixelLocation(x, y);
 	Hitpoint hp = scene.intersectWithScene(r);
 	Vector3 shaded = shader.shade(r, hp, 1.0);
-	printf("%d, %d: %f, %f, %f\n", x, this->resy - y - 1, shaded[0], shaded[1], shaded[2]);
 	buffer.at(x, this->resy - y - 1) = shaded;
 }
 

@@ -29,8 +29,13 @@ Params loadFromParams(int argc, char ** argv) {
 		return Params(argv[1], argv[2], Resolution(stoi(argv[3]), stoi(argv[4])), -1);
 	}
 
+	if (argc == 6) {
+		return Params(argv[1], argv[2], Resolution(stoi(argv[3]), stoi(argv[4])), stof(argv[5]));
+	}
+
 	else {
 		printf("Usage %s input.obj output.png [resx resy] [fov]\n", argv[0]);
+		printf("%d", argc);
 		exit(1);
 	}
 
